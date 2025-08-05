@@ -10,38 +10,53 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container my-3">
-        <h1>Treni</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Codice Treno</th>
-            <th>Azienda</th>
-            <th>Stazione partenza</th>
-            <th>Data partenza</th>
-            <th>Stazione arrivo</th>
-            <th>Data arrivo</th>
-            <th>In orario</th>
-            <th>Numero di Carrozze</th>
-            <th>Cancellato</th>
-        </tr>
-    </thead>
-    @foreach ($trains as $train)
-        <tr>
-            <td>{{ $train->codice_treno }}</td>
-            <td>{{ $train->azienda }}</td>   
-            <td>{{ $train->stazione_di_partenza }}</td>
-            <td>{{ $train->orario_di_partenza }}</td>
-            <td>{{ $train->stazione_di_arrivo }}</td>
-            <td>{{ $train->orario_di_arrivo }}</td>
-            <td>{{ $train->in_orario ? 'Si' : 'No' }}</td>
-            <td>{{ $train->totale_carrozze }}</td>
-            <td>{{ $train->cancellato ? 'Si' : 'No' }}</td>
-        </tr>
-        @endforeach
-</table>
+
+<body>
+
+
+
+
+
+    <div class="container my-3">
+        <div class="header d-flex justify-content-between align-items-center">
+          
+              <h1>Treni</h1> <div id="orologio"></div>
+        </div>
+      
+        <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Codice Treno</th>
+                    <th>Azienda</th>
+                    <th>Stazione partenza</th>
+                    <th>Data partenza</th>
+                    <th>Stazione arrivo</th>
+                    <th>Data arrivo</th>
+                    <th>In orario</th>
+                    <th>Minuti ritardo</th>
+                    <th>Numero di Carrozze</th>
+                    <th>Cancellato</th>
+                </tr>
+            </thead>
+            @foreach ($trains as $train)
+                <tr>
+                    <td>{{ $train->codice_treno }}</td>
+                    <td>{{ $train->azienda }}</td>   
+                    <td>{{ $train->stazione_di_partenza }}</td>
+                    <td>{{ $train->orario_di_partenza }}</td>
+                    <td>{{ $train->stazione_di_arrivo }}</td>
+                    <td>{{ $train->orario_di_arrivo }}</td>
+                    <td>{{ $train->in_orario ? 'Si' : 'No' }}</td>
+                    <td>{{ $train->ritardo}}</td>
+                    <td>{{ $train->totale_carrozze }}</td>
+                    <td>{{ $train->cancellato ? 'Si' : 'No' }}</td>
+                </tr>
+                @endforeach
+        </table>
+        </div>
+
     </div>
     
     
