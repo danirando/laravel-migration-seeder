@@ -3,6 +3,8 @@ import "../css/app.css";
 
 function aggiornaOrologio() {
     const adesso = new Date();
+
+    // Formattazione della data
     const opzioni = {
         year: "numeric",
         month: "2-digit",
